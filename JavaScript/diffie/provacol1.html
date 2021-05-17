@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<script>
+		
+	</script>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="description" content="Sito Web Criptografia! ;-)">
+		<title>Sito Web Criptografia</title>
+	<style>
+		* {
+		  box-sizing: border-box;
+		  text-align:center;
+		}
+		
+		.game {
+			max-width: 1000px;
+			margin: auto;
+		}
+		
+		/* Create three unequal columns that floats next to each other */
+		.column {
+		  float: left;
+		  border: 1px solid red;
+		}
+
+		.left, .right {
+		  width: 40%;
+		}
+
+		.middle {
+		  width: 20%;
+		}
+
+		/* Clear floats after the columns */
+		.row:after {
+		  content: "";
+		  display: table;
+		  clear: both;
+		}
+		
+
+
+		
+		.chiavePrivata {
+			width: 30%;
+		}
+		.chiaro {width: 30%;
+				 min-width : 50px; }
+		.sinistra{ margin-right : auto;}
+		.destra  { margin-left  : auto;}
+		
+		.picture{
+			width:30%;
+			padding-top: 0%;
+		}
+		
+	</style>
+	
+	
+	
+	</head>
+	<body >
+		<img class="picture" src="img/alice.svg" >
+
+		<p> Alice propone un parametro pubblico e lo invia in chiaro  </p>
+		<input class="chiaro" id="parametroPubblico" type="text" readonly >
+
+		<p> Alice sceglie una Chiave privata </p>
+		<input class="privato"  id="AliceSecretKey" type="text" readonly >
+		
+		<p> Alice calcola la sua chiave pubblica e la invia in chiaro</p>
+		<input class="chiaro" id="chiavePubblicaAlice" type="text" readonly >	
+		
+		<p> Alice ricevuta la chiave pubblica di bob calcola la chiave di sessione </p>
+		<input class="privato" id="chiaveSessioneA" type="text" readonly >	
+
+<br>
+
+		<img class="picture" src="img/bob.svg" >
+
+		<p> Bob sceglie una Chiave privata </p>
+		<input class="privato"  id="BobSecretKey" type="text" readonly >
+
+		<p> Bob calcola la sua chiave pubblica e la invia in chiaro </p>
+		<input class="chiaro" id="chiavePubblicaBob" type="text" readonly >	
+
+		<p> Bob ricevuta la chiave pubblica di Alice calcola la chiave di sessione </p>
+		<input class="privato" id="chiaveSessioneB" type="text" readonly >	
+		
+			 
+	</body>
+</html>
