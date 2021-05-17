@@ -8,6 +8,15 @@
 			document.alfabetoChiaro ="ABCDEFGHILMNOPQRSTUVZ";
 			document.alfabetoCifrato="                     ";
 			
+			document.a=1;
+			document.b=1;
+			
+			document.addEventListener("DOMContentLoaded", function(){
+				setCifrario( document.a , document.b );
+				aggiornaUI();
+			})
+			
+			
 			function setCifrario( a , b ){
 				document.a=a;
 				document.b=b;
@@ -194,12 +203,6 @@
   <input type="button" value="Leva Spazi" onClick=" levaSpazi('testoCifrato') ">
   <input type="button" value="copia" onClick="copia('testoCifrato') ">
   <input type="button" value="cancella" onClick="cancella('testoCifrato') ">
- 
 
-
-<script>
-setCifrario(1,1);
-aggiornaUI ();
-</script>
 </body>
 </html>
