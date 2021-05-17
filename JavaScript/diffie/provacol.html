@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+	<script>
+		
+	</script>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="description" content="Sito Web Criptografia! ;-)">
+		<title>Sito Web Criptografia</title>
+	<style>
+		* {
+		  box-sizing: border-box;
+		  text-align:center;
+		}
+		
+		.game {
+			max-width: 1000px;
+			margin: auto;
+		}
+		
+		/* Create three unequal columns that floats next to each other */
+		.column {
+		  float: left;
+		  border: 1px solid red;
+		}
+
+		.left, .right {
+		  width: 40%;
+		}
+
+		.middle {
+		  width: 20%;
+		}
+
+		/* Clear floats after the columns */
+		.row:after {
+		  content: "";
+		  display: table;
+		  clear: both;
+		}
+		
+
+
+		
+		.chiavePrivata {
+			width: 30%;
+		}
+		.chiaro {width: 30%;
+				 min-width : 50px; }
+		.sinistra{ margin-right : auto;}
+		.destra  { margin-left  : auto;}
+		
+		.picture{
+			width:30%;
+			padding-top: 0%;
+		}
+		
+	</style>
+	
+	
+	
+	</head>
+	<body >
+		<div class="game">
+			 <div class="row">
+				  <div class="column left">
+					  <img class="picture" src="img/alice.svg" style="width: 30%;">
+				  </div>
+				  <div class="column middle"></div>
+				  <div class="column right">
+					  <img class="picture" src="img/bob.svg" style="width: 30%;">
+				  </div>
+			</div>
+			<div class="row">
+				  <div class="column left">
+					  <p> ALICE sceglie una Chiave privata </p>
+				  </div>
+				  <div class="column middle"></div>
+				  <div class="column right">
+					  <p> BOB sceglie una Chiave privata </p>
+				  </div>
+			</div>
+			<div class="row">
+				  <div class="column left ">
+					  <input class="chiavePrivata"  id="AliceSecretKey" type="text" readonly >
+				  </div>
+				  <div class="column middle"></div>
+				  <div class="column right">
+					  <input class="chiavePrivata"  id="BobSecretKey" type="text" readonly >
+				  </div>
+			</div>
+			<div class="row">
+				  <div class="column left">
+					  <p> propone un parametro pubblico e lo invia in chiaro  </p>
+				  </div>
+				  <div class="column middle">
+					  <input class="chiaro" id="parametroPubblico" type="text" readonly >
+				  </div>
+				  <div class="column right"></div>
+			</div>
+			<div class="row">
+				  <div class="column left">
+					  <p> calcola la sua chiave pubblica e la invia in chiaro => </p>
+				  </div>
+				  <div class="column middle">
+					   <input class="chiaro" id="chiavePubblicaAlice" type="text" readonly >	
+				  </div>
+				  <div class="column right">
+					  
+				  </div>
+			</div>
+			 
+			
+			
+			<div> <p>another text </p></div> 
+		</div>
+		
+	</body>
+</html>
