@@ -1,0 +1,113 @@
+<head>
+<script>
+document.alfabeto="ABCDEFGHILMNOPQRSTUVZ";
+document.mappa =[];
+document.a=1;
+document.b=1;
+
+
+
+
+document.addEventListener("DOMContentLoaded", function(){
+
+				var svg= document.getElementById("grafico");
+
+				for (var i=0 ; i<document.alfabeto.length; i++){
+
+					var car=document.createElementNS("http://www.w3.org/2000/svg", "text");
+					car.innerHTML=document.alfabeto[i];
+					car.setAttribute("style","font-size:10");
+					car.setAttribute("x",15*i-10/2) ;
+					car.setAttribute("y",-10/2) ;
+					
+					svg.appendChild(car);
+					
+					var cary=document.createElementNS("http://www.w3.org/2000/svg", "text");
+					cary.innerHTML=document.alfabeto[i];
+					cary.setAttribute("style","font-size:10");
+					cary.setAttribute("x", -10-10/2);
+					cary.setAttribute("y",15*i+10/2) ;
+					svg.appendChild(cary);
+				}
+				aggiornaUI();
+				
+				
+
+
+
+
+})
+
+function disegna_Funzione(){
+	var funzione=document.getElementById("funzione");
+	funzione.innerHTML="";
+	
+	for (var i = 0 ; i <document.alfabeto.length; i++){
+		var a=document.a;
+		var b=document.b;
+		var m = document.alfabeto.length;
+		var x= i;
+		var y= ( i*a +b) % m ;
+		if (y<0) y=y+m;
+		var cerchio=document.createElementNS("http://www.w3.org/2000/svg", "circle");
+		cerchio.setAttribute("cx", 15 * x );
+		cerchio.setAttribute("cy", 15 * y );
+		cerchio.setAttribute("r",3);
+		funzione.appendChild(cerchio);
+	}
+}
+
+function aggiornaUI (){
+				a=document.a;
+				b=document.b;
+					if (a==1) aStr="X"
+				else if (a==0)  aStr="   ";
+				else aStr=a+"X ";
+					
+					if ( b==0 ) if ( a==0 ) {aStr="  " ; bStr= "0"}
+								else bStr=" ";
+				else if ( b>0 ) bStr = " + " + b;
+				else bStr = " - " + Math.abs(b);
+				
+				document.getElementById("trasformazione").innerHTML= " Y = "+aStr+bStr;
+				disegna_Funzione();
+			}
+			
+</script>
+
+</head>
+
+<div style="width: 800px; height: auto;">
+	
+	<svg id="grafico" viewBox="-20 -20 330 330 "  >
+		<g id="assi" >
+			<line id="asseX" x1="-10" y1="0" x2="480" y2="0" style="stroke:rgb(0,0,255);stroke-width:1" />
+			<line id="asseY" x1="0" y1="-10" x2="0" y2="480" style="stroke:rgb(0,0,255);stroke-width:1" />
+		</g>
+		<g id="funzione" fill="red" stroke-width="2">
+		</g>
+
+	
+			
+</svg>
+
+</div>
+
+<hr>
+<h2 id="trasformazione"> </h2>
+
+
+
+<hr>
+ <input type="button" value="<<" onClick=" document.a; --document.b;aggiornaUI() ">
+ <input type="button" value="." onClick=" document.b=0;aggiornaUI() ">
+ <input type="button" value=">>" onClick=" document.a; ++document.b;aggiornaUI() ">
+
+ <input type="button" value="^" onClick=" ++document.a; document.b ;aggiornaUI() ">
+ <input type="button" value="." onClick=" document.a=1;aggiornaUI() ">
+ <input type="button" value="V" onClick=" --document.a; document.b;aggiornaUI() ">
+<hr>
+
+
+
+		
